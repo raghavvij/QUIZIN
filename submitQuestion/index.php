@@ -66,6 +66,6 @@
 	}
 	else
 	{
-    	var_export($_SERVER['REQUEST_METHOD']);
+    	Utility::fetchHTTPCodeText(400);
 	}
 ?>

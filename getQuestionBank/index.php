@@ -50,9 +50,10 @@
     }
 	}
 	header('Content-Type: application/json');
+	Utility::fetchHTTPCodeText(200);
 	echo json_encode($jsonArray);
 	}
 }else {
-		echo var_export($_SERVER['REQUEST_METHOD']);
+		Utility::fetchHTTPCodeText(400);
 	}
 ?>

@@ -20,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 	$jsonArray = array('score'=>$score,'max_score'=>$max_score,'answers'=>$finalArray);
 	header('Content-Type: application/json');
-		 Utility::fetchHTTPCodeText(200);
+	Utility::fetchHTTPCodeText(200);
 	echo "<br><br><br>".json_encode($jsonArray); 
 }else{
-		Utility::fetchHTTPCodeText(400);
+	Utility::fetchHTTPCodeText(400);
 }
 ?>
