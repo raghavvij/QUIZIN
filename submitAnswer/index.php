@@ -1,5 +1,6 @@
 <?php
 require ('AnswerModel.php');
+require('../config.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$score = 0;
 	$max_score = 0;
@@ -21,6 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	header('Content-Type: application/json');
 	echo "<br><br><br>".json_encode($jsonArray); 
 }else{
-	echo $_SERVER['REQUEST_METHOD'];
+		$protocol = (isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0');
+		$code = 400;
+		$text = Utility::fetchHTTPCodeText(400);
+		header($protocol . ' ' . $code . ' ' . $text);
 }
 ?>
