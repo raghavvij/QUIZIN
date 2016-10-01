@@ -57,8 +57,8 @@
                     break;
                 }
 
-                $protocol = (isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0');
-                return $text;
+               	$protocol = (isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0');
+				header($protocol . ' ' . $code . ' ' . $text);
             }
 		}
 	}

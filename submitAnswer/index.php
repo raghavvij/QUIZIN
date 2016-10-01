@@ -20,11 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 	$jsonArray = array('score'=>$score,'max_score'=>$max_score,'answers'=>$finalArray);
 	header('Content-Type: application/json');
+		 Utility::fetchHTTPCodeText(200);
 	echo "<br><br><br>".json_encode($jsonArray); 
 }else{
-		$protocol = (isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0');
-		$code = 400;
-		$text = Utility::fetchHTTPCodeText(400);
-		header($protocol . ' ' . $code . ' ' . $text);
+		Utility::fetchHTTPCodeText(400);
 }
 ?>
